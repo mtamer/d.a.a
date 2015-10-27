@@ -79,11 +79,10 @@ def main():
 		if word not in stopwords.words('english')]
 	totalCounts= Counter(counts1 + counts2 + counts3)
 	print totalCounts
-	#mark = dict((i, totalCounts.count(i)) for i in totalCounts)
-	# print Counter[mark]
+	#result = dict((i, totalCounts.count(i)) for i in totalCounts)
+	# print Counter[result]
 	# totalCounts.extend(counts1 + counts2 + counts3)
 	# print Counter[totalCounts]
-
 
 if __name__ == '__main__':
 	main()
