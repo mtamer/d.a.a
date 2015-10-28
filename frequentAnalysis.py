@@ -66,23 +66,11 @@ def parser(results_array):
 
 def main():
 	totalCounts = []
-	print "Please Enter three relative companies you would like to compare: "
-	keyword1 = raw_input("Please Enter Company 1: ")
-	keyword2 = raw_input("Please Enter Company 2: ")
-	keyword3 = raw_input("Please Enter Company 3: ")
+	keyword = raw_input("Enter what you would like to search: ")
 	print "This will take a moment...."
-	counts1 = [word.lower() for list_of_words in [paragraph.split() for paragraph in parser(getArticles(keyword1))] for word in list_of_words 
-		if word not in stopwords.words('english')]
-	counts2 = [word.lower() for list_of_words in [paragraph.split() for paragraph in parser(getArticles(keyword2))] for word in list_of_words 
-		if word not in stopwords.words('english')]
-	counts3 = [word.lower() for list_of_words in [paragraph.split() for paragraph in parser(getArticles(keyword3))]for word in list_of_words 
-		if word not in stopwords.words('english')]
-	totalCounts= Counter(counts1 + counts2 + counts3)
-	print totalCounts
-	#result = dict((i, totalCounts.count(i)) for i in totalCounts)
-	# print Counter[result]
-	# totalCounts.extend(counts1 + counts2 + counts3)
-	# print Counter[totalCounts]
+	counts = Counter([word.lower() for list_of_words in [paragraph.split() for paragraph in parser(getArticles(keyword))] for word in list_of_words 
+		if word not in stopwords.words('english')])
+	print counts
 
 if __name__ == '__main__':
 	main()
