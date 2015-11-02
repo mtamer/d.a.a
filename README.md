@@ -9,4 +9,8 @@ pip install -r requirements.txt
 python frequentAnalysis.py
 
 ```
+Demonstration: 
+
+![alt tag](https://github.com/mtamer/d.a.a/blob/master/ex.png)
+
 **Note that not all requirements are needed for this script. View Script for more details.
