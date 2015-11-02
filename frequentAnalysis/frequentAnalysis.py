@@ -6,6 +6,7 @@ import mechanize
 from bs4 import BeautifulSoup
 from lxml.html.clean import Cleaner
 import nltk
+# Uncomment below if nltk hasn't been downloaded
 # nltk.download()
 from itertools import chain
 
@@ -22,7 +23,7 @@ def getArticles(keyword):
 	br = mechanize.Browser()
 	br.set_handle_robots(False)
 	br.addheaders=[('User-agent','chrome')]
-
+	# Change num=#, to whatever the number of pages you want to crawl.
 	term = keyword.replace(" ", "+")
 	query = "http://www.google.ca/search?&tbm=nws&num=10&q=" + term 
 	htmltext = br.open(query).read()
