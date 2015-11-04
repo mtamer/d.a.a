@@ -14,7 +14,7 @@ from itertools import chain
 from nltk.corpus import stopwords
 from urllib2 import urlopen, Request
 
-
+# Method that gets all the relative links from google from our defined search
 def getArticles(keyword):
 	cleaner = Cleaner()
 	cleaner.javascript = True
@@ -50,7 +50,7 @@ def getArticles(keyword):
 				results_array.append(str(source_url[0].replace("q=", "").replace("&amp", "")))
 	return results_array
 
-
+# Get's all the important data (in paragraph tags), parses it, splits it, and retrieves the top 100 common words escaping stop words
 def parser(results_array):
 	all_text = []
 	hdr = ({'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
